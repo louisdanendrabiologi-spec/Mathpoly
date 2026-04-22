@@ -4,29 +4,38 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MathOly Library</title>
-
   <link rel="stylesheet" href="style.css">
-
-  <!-- font mirip Claude -->
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
   <nav class="navbar">
-    <h2>📚 MathOly Library</h2>
+    <div class="nav-content">
+      <span class="logo">📚 MathOly Library</span>
+    </div>
   </nav>
 
   <div class="container">
+    <header class="hero">
+      <h1>Perpustakaan Olimpiade Matematika</h1>
+      <p>Koleksi modul eksklusif dari persiapan kabupaten hingga kancah internasional 🚀</p>
+    </header>
 
-    <h1>Perpustakaan Olimpiade Matematika</h1>
-    <p>Belajar dari dasar sampai IMO 🚀</p>
+    <section>
+      <div class="section-header">
+        <h2>📖 Modul & PDF Terpilih</h2>
+        <span class="badge">E-Books</span>
+      </div>
+      <div id="books" class="grid"></div>
+    </section>
 
-    <h2>📖 Buku & PDF</h2>
-    <div id="books" class="grid"></div>
-
-    <h2>🎥 Video Pembelajaran</h2>
-    <div id="videos" class="grid"></div>
-
+    <section>
+      <div class="section-header">
+        <h2>🎥 Kuliah Olimpiade</h2>
+        <span class="badge">Video</span>
+      </div>
+      <div id="videos" class="grid"></div>
+    </section>
   </div>
 
   <script src="app.js"></script>
