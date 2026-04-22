@@ -1,71 +1,67 @@
-// Data Buku dengan Link Olimpiade Asli (Contoh Sumber Terpercaya)
 const books = [
   {
-    title: "OSN Informatika/Matematika",
-    desc: "Persiapan teknis dan logika dasar untuk kompetisi sains nasional.",
-    link: "https://osn.id/arsip",
-    img: "https://images.unsplash.com/photo-1509228468518-180dd4864904?auto=format&fit=crop&q=80&w=400"
+    title: "The IMO Compendium",
+    desc: "Kumpulan soal International Mathematical Olympiad paling lengkap di dunia.",
+    link: "https://www.imocompendium.info/",
+    img: "https://covers.openlibrary.org/b/id/8316124-L.jpg"
   },
   {
-    title: "AIME Problems Set",
-    desc: "Koleksi soal American Invitational Mathematics Examination.",
-    link: "https://artofproblemsolving.com/wiki/index.php/AIME_Problems_and_Solutions",
-    img: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?auto=format&fit=crop&q=80&w=400"
+    title: "Euclidean Geometry",
+    desc: "Buku legendaris karya Chen & Siegman untuk materi Geometri olimpiade.",
+    link: "http://index-of.co.uk/Geometry/Euclidean%20Geometry%20in%20Mathematical%20Olympiads.pdf",
+    img: "https://covers.openlibrary.org/b/id/12644485-L.jpg"
   },
   {
-    title: "Combinatorics - Guichard",
-    desc: "E-book mendalam tentang teknik menghitung dan multiset.",
-    link: "https://www.whitman.edu/mathematics/combinatorics_online/combinatorics.pdf",
-    img: "https://images.unsplash.com/photo-1543286386-713bdd548da4?auto=format&fit=crop&q=80&w=400"
+    title: "Elementary Number Theory",
+    desc: "Dasar-dasar teori bilangan yang wajib dikuasai untuk tingkat kabupaten/provinsi.",
+    link: "https://archive.org/details/elementarynumber0000unse",
+    img: "https://covers.openlibrary.org/b/id/10540821-L.jpg"
   },
   {
-    title: "IMO Shortlist",
-    desc: "Daftar soal kandidat International Mathematical Olympiad.",
-    link: "https://www.imo-official.org/problems.aspx",
-    img: "https://images.unsplash.com/photo-1518133910546-b6c2fb7d79e3?auto=format&fit=crop&q=80&w=400"
+    title: "Problem-Solving Strategies",
+    desc: "Strategi menghadapi soal-soal sulit oleh Arthur Engel.",
+    link: "https://archive.org/details/ArthurEngelProblemSolvingStrategies",
+    img: "https://covers.openlibrary.org/b/id/282772-L.jpg"
   }
 ];
 
 const videos = [
   {
-    title: "Trik Cepat Teori Bilangan",
-    youtube: "https://www.youtube.com/embed/sN_v20I1P7o" // Ganti ID video aslimu di sini
+    title: "Pembahasan Soal AIME",
+    youtube: "https://www.youtube.com/embed/5_fW_9YfIhk"
   },
   {
-    title: "Geometri Olimpiade Dasar",
-    youtube: "https://www.youtube.com/embed/8v_6YIu2zGk" 
+    title: "Teknik Kombinatorika Dasar",
+    youtube: "https://www.youtube.com/embed/Z0XAn99R9sU"
   }
 ];
 
-const booksContainer = document.getElementById("books");
-const videosContainer = document.getElementById("videos");
+const bGrid = document.getElementById("books-grid");
+const vGrid = document.getElementById("videos-grid");
 
-// Render Buku
-books.forEach(book => {
-  booksContainer.innerHTML += `
+// Render Buku dengan gambar asli
+books.forEach(b => {
+  bGrid.innerHTML += `
     <div class="card">
-      <img src="${book.img}" alt="${book.title}" class="card-image">
-      <div class="card-content">
-        <h3>${book.title}</h3>
-        <p>${book.desc}</p>
-        <a class="button" href="${book.link}" target="_blank">Unduh Modul</a>
+      <div class="card-img-container">
+        <img src="${b.img}" alt="${b.title}" onerror="this.src='https://via.placeholder.com/400x600?text=No+Cover'">
+      </div>
+      <div class="card-body">
+        <h3>${b.title}</h3>
+        <p>${b.desc}</p>
+        <a href="${b.link}" target="_blank" class="button">Lihat Dokumen</a>
       </div>
     </div>
   `;
 });
 
 // Render Video
-videos.forEach(video => {
-  videosContainer.innerHTML += `
+videos.forEach(v => {
+  vGrid.innerHTML += `
     <div class="card">
-      <div class="card-content">
-        <h3>${video.title}</h3>
-        <iframe width="100%" height="180"
-          src="${video.youtube}"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen>
-        </iframe>
+      <div class="card-body">
+        <h3>${v.title}</h3>
+        <iframe width="100%" height="200" src="${v.youtube}" frameborder="0" allowfullscreen style="border-radius:10px"></iframe>
       </div>
     </div>
   `;
