@@ -3,40 +3,67 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MathOly Library</title>
+  <title>MathOly Library | Pusat Modul Olimpiade</title>
   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
   <nav class="navbar">
     <div class="nav-content">
-      <span class="logo">📚 MathOly Library</span>
+      <div class="logo">📐 MathOly<span>Library</span></div>
+      <div class="nav-links">
+        <a href="#books">Modul</a>
+        <a href="#videos">Video</a>
+      </div>
     </div>
   </nav>
 
   <div class="container">
-    <header class="hero">
-      <h1>Perpustakaan Olimpiade Matematika</h1>
-      <p>Koleksi modul eksklusif dari persiapan kabupaten hingga kancah internasional 🚀</p>
+    <header class="hero-section">
+      <span class="welcome-tag">Selamat Datang di MathOly</span>
+      <h1>Akses Sumber Belajar <br>Matematika Terbaik</h1>
+      <p>
+        Kami mengumpulkan berbagai sumber daya dari kompetisi bergengsi seperti OSN, AIME, hingga IMO. 
+        Dirancang untuk membantu siswa mendalami konsep kombinatorika, teori bilangan, aljabar, dan geometri secara sistematis.
+      </p>
+      <div class="hero-stats">
+        <span><strong>15+</strong> Modul PDF</span>
+        <span><strong>10+</strong> Video Materi</span>
+        <span><strong>Gratis</strong> Diakses</span>
+      </div>
     </header>
 
-    <section>
-      <div class="section-header">
-        <h2>📖 Modul & PDF Terpilih</h2>
-        <span class="badge">E-Books</span>
+    <hr class="divider">
+
+    <section id="books">
+      <div class="section-title">
+        <h2>📖 Koleksi Modul Terpilih</h2>
+        <p>Gunakan dokumen ini untuk latihan mandiri dan persiapan kompetisi.</p>
       </div>
-      <div id="books" class="grid"></div>
+      <div id="books-grid" class="grid"></div>
     </section>
 
-    <section>
-      <div class="section-header">
-        <h2>🎥 Kuliah Olimpiade</h2>
-        <span class="badge">Video</span>
+    <section id="videos">
+      <div class="section-title">
+        <h2>🎥 Kuliah & Pembahasan Soal</h2>
+        <p>Penjelasan visual untuk topik-topik tingkat lanjut.</p>
       </div>
-      <div id="videos" class="grid"></div>
+      <div id="videos-grid" class="grid"></div>
     </section>
   </div>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-info">
+        <h3>MathOly Library</h3>
+        <p>Membangun generasi olimpiade Indonesia yang kompetitif dan berwawasan luas.</p>
+      </div>
+      <div class="footer-bottom">
+        &copy; 2026 MathOly Project. Dibuat untuk tujuan edukasi.
+      </div>
+    </div>
+  </footer>
 
   <script src="app.js"></script>
 </body>
