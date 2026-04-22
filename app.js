@@ -3,36 +3,40 @@ const books = [
     title: "The IMO Compendium",
     desc: "Kumpulan soal International Mathematical Olympiad paling lengkap di dunia.",
     link: "https://www.imocompendium.info/",
-    img: "https://covers.openlibrary.org/b/id/8316124-L.jpg"
+    img: "https://share.google/GmkpfBzUFRwedQe0l"
   },
   {
-    title: "Euclidean Geometry",
+    title: "Euclidean Geometry in Mathematical Olimpiade",
     desc: "Buku legendaris karya Chen & Siegman untuk materi Geometri olimpiade.",
     link: "http://index-of.co.uk/Geometry/Euclidean%20Geometry%20in%20Mathematical%20Olympiads.pdf",
-    img: "https://covers.openlibrary.org/b/id/12644485-L.jpg"
+    img: "https://share.google/S6trGm8bxeVKjH7qb"
   },
-  {
+  {p
     title: "Elementary Number Theory",
     desc: "Dasar-dasar teori bilangan yang wajib dikuasai untuk tingkat kabupaten/provinsi.",
     link: "https://archive.org/details/elementarynumber0000unse",
-    img: "https://covers.openlibrary.org/b/id/10540821-L.jpg"
+    img: "https://share.google/n7FDJvZcL4v9esSE0"
   },
   {
     title: "Problem-Solving Strategies",
     desc: "Strategi menghadapi soal-soal sulit oleh Arthur Engel.",
     link: "https://archive.org/details/ArthurEngelProblemSolvingStrategies",
-    img: "https://covers.openlibrary.org/b/id/282772-L.jpg"
+    img: "https://share.google/aFsthdhv8bXbdBiWb"
   }
 ];
 
 const videos = [
   {
-    title: "Pembahasan Soal AIME",
-    youtube: "https://www.youtube.com/embed/5_fW_9YfIhk"
+    title: "Aljabar Kreatif ala Kak Bho",
+    youtube: "https://youtube.com/playlist?list=PL0rDA40Dh8yt-QVpmgFg6TSIkDpewvGQp&si=P-4BeZkr-9LkqIWN"
   },
   {
-    title: "Teknik Kombinatorika Dasar",
-    youtube: "https://www.youtube.com/embed/Z0XAn99R9sU"
+    title: "Pembahasan OSN-P SMA 2024",
+    youtube: "https://youtube.com/playlist?list=PLFY-JQuMZwSV4Vx9xgO0nHXely1ZrTCkf&si=MXos_79P-eadGQwB"
+  },
+  {
+    title: "Pembahasan Soal KTOM Juni 2025"
+    youtube: "https://youtube.com/playlist?list=PLqDf4PEYK1oDK9GHjiDHuImKQRPuUX2i8&si=-exx8Ho3sThHvstU"
   }
 ];
 
