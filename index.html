@@ -78,59 +78,39 @@
     </div>
 
     <script>
-        // Data sederhana (bisa diganti dengan Supabase nantinya)
-        let user = {
-            name: "Guest",
-            points: 0,
-            badges: 0,
-            loggedIn: false
-        };
+        // Ambil data lama atau buat baru jika tidak ada
+let userData = JSON.parse(localStorage.getItem('mathQuest_User')) || {
+    name: "Tamu",
+    points: 0,
+    badges: 0,
+    isLoggedIn: false
+};
 
-        function toggleModal(id) {
-            document.getElementById(id).classList.toggle('active');
-        }
+function updateStats() {
+    document.getElementById('display-name').innerText = userData.name;
+    document.getElementById('user-points').innerText = userData.points;
+    document.getElementById('user-badges').innerText = userData.badges;
+    
+    // Simpan ke memory browser
+    localStorage.setItem('mathQuest_User', JSON.stringify(userData));
+}
 
-        function handleLogin() {
-            const nameInput = document.getElementById('input-name').value;
-            if (nameInput.trim() !== "") {
-                user.name = nameInput;
-                user.loggedIn = true;
-                updateUI();
-                toggleModal('login-modal');
-                alert("Selamat datang, " + user.name + "! Selesaikan materi untuk poin.");
-            }
-        }
+// Panggil fungsi ini saat tombol "Selesai Kuis" diklik
+function tambahPoin(n) {
+    userData.points += n;
+    
+    // Cek Lencana
+    if(userData.points >= 500 && userData.badges < 1) {
+        userData.badges = 1;
+        alert("🎉 Kamu dapet lencana Bronze!");
+    }
+    
+    updateStats();
+}
 
-        function updateUI() {
-            document.getElementById('display-name').innerText = user.name;
-            document.getElementById('user-points').innerText = user.points;
-            document.getElementById('user-badges').innerText = user.badges;
-            
-            if(user.loggedIn) {
-                document.getElementById('auth-section').innerHTML = `
-                    <span class="text-sm font-bold text-blue-600">Halo, ${user.name.split(' ')[0]}!</span>
-                    <button onclick="logout()" class="text-xs text-red-500 underline">Logout</button>
-                `;
-            }
-        }
+// Inisialisasi saat web dibuka
+updateStats();
 
-        function logout() {
-            location.reload(); // Reset sederhana
-        }
-
-        // Fungsi Simulasi Kerjakan Soal (Bisa dipanggil di tombol materi)
-        function tambahPoin(jumlah) {
-            if(!user.loggedIn) {
-                toggleModal('login-modal');
-                return;
-            }
-            user.points += jumlah;
-            if(user.points >= 100 && user.badges == 0) {
-                user.badges += 1;
-                alert("🏆 Selamat! Kamu mendapatkan Lencana Perunggu pertama!");
-            }
-            updateUI();
-        }
     </script>
     
     async function loadNews() {
