@@ -1,70 +1,116 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MathOly Library | Pusat Modul Olimpiade</title>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MathQuest - Platform Olimpiade Matematika</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap');
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #f8fafc; color: #334155; }
+        .soft-gradient { background: linear-gradient(135deg, #e0f2fe 0%, #f0fdf4 100%); }
+        .nav-blur { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(10px); }
+    </style>
 </head>
 <body>
 
-  <nav class="navbar">
-    <div class="nav-content">
-      <div class="logo">📐 MathOly<span>Library</span></div>
-      <div class="nav-links">
-        <a href="#books">Modul</a>
-        <a href="#videos">Video</a>
-      </div>
-    </div>
-  </nav>
+    <nav class="fixed w-full z-50 nav-blur border-b border-slate-200 px-6 py-3 flex justify-between items-center">
+        <div class="flex items-center gap-2">
+            <div class="bg-blue-500 text-white p-2 rounded-lg"><i class="fas fa-infinity"></i></div>
+            <span class="font-bold text-xl tracking-tight text-slate-800">MathQuest</span>
+        </div>
+        <div class="hidden md:flex space-x-6 text-sm font-medium">
+            <a href="#" class="text-blue-600">Home</a>
+            <a href="#materi" class="hover:text-blue-500 transition">Materi</a>
+            <a href="#soal" class="hover:text-blue-500 transition">Bank Soal</a>
+            <a href="#magazine" class="hover:text-blue-500 transition">Magazine</a>
+            <a href="#leaderboard" class="hover:text-blue-500 transition">Ranking</a>
+        </div>
+        <div class="flex items-center gap-4">
+            <button class="text-sm font-semibold">Masuk</button>
+            <button class="bg-blue-600 text-white px-5 py-2 rounded-full text-sm font-semibold hover:shadow-lg transition">Daftar Akun</button>
+        </div>
+    </nav>
 
-  <div class="container">
-    <header class="hero-section">
-      <span class="welcome-tag">Selamat Datang di MathOly</span>
-      <h1>Akses Sumber Belajar <br>Matematika Terbaik</h1>
-      <p>
-        Kami mengumpulkan berbagai sumber daya dari kompetisi bergengsi seperti OSN, AIME, hingga IMO. 
-        Dirancang untuk membantu siswa mendalami konsep kombinatorika, teori bilangan, aljabar, dan geometri secara sistematis.
-      </p>
-      <div class="hero-stats">
-        <span><strong>15+</strong> Modul PDF</span>
-        <span><strong>10+</strong> Video Materi</span>
-        <span><strong>Gratis</strong> Diakses</span>
-      </div>
-    </header>
-
-    <hr class="divider">
-
-    <section id="books">
-      <div class="section-title">
-        <h2>📖 Koleksi Modul Terpilih</h2>
-        <p>Gunakan dokumen ini untuk latihan mandiri dan persiapan kompetisi.</p>
-      </div>
-      <div id="books-grid" class="grid"></div>
+    <section class="pt-32 pb-20 px-6 soft-gradient">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
+            <div class="flex-1">
+                <span class="bg-blue-100 text-blue-700 px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Pusat Belajar OSN & IMO</span>
+                <h1 class="text-4xl md:text-6xl font-bold text-slate-800 mt-4 leading-tight">Taklukkan Matematika, Raih <span class="text-blue-600">Lencana Emas.</span></h1>
+                <p class="mt-6 text-slate-600 text-lg leading-relaxed">Dari konsep dasar hingga level International Mathematical Olympiad. Materi terstruktur, latihan soal dunia, dan komunitas diskusi dalam satu tempat.</p>
+                <div class="mt-8 flex gap-4">
+                    <button class="bg-slate-800 text-white px-8 py-3 rounded-xl hover:bg-slate-700 transition">Mulai Belajar</button>
+                    <button class="border border-slate-300 px-8 py-3 rounded-xl hover:bg-white transition text-slate-600">Cek Ranking Bulan Ini</button>
+                </div>
+            </div>
+            <div class="flex-1 grid grid-cols-2 gap-4">
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
+                    <i class="fas fa-trophy text-yellow-500 text-2xl mb-4"></i>
+                    <h3 class="font-bold">Ranking Bulanan</h3>
+                    <p class="text-xs text-slate-500">Dapatkan poin dari setiap soal yang benar.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 mt-8">
+                    <i class="fas fa-medal text-blue-500 text-2xl mb-4"></i>
+                    <h3 class="font-bold">Lencana Unik</h3>
+                    <p class="text-xs text-slate-500">Kumpulkan badge spesial setiap bulan.</p>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <section id="videos">
-      <div class="section-title">
-        <h2>🎥 Kuliah & Pembahasan Soal</h2>
-        <p>Penjelasan visual untuk topik-topik tingkat lanjut.</p>
-      </div>
-      <div id="videos-grid" class="grid"></div>
+    <section id="materi" class="py-20 px-6 max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl font-bold">Jalur Belajar Bertahap</h2>
+            <p class="text-slate-500 mt-2">Materi disusun dari nol agar ramah bagi pemula.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+            <div class="bg-white border border-slate-200 rounded-2xl p-6 relative overflow-hidden group">
+                <div class="absolute top-0 left-0 w-2 h-full bg-green-400"></div>
+                <span class="text-xs font-bold text-green-600">LEVEL 1</span>
+                <h3 class="font-bold text-xl mt-2">Foundation</h3>
+                <p class="text-sm text-slate-500 mt-2">Aljabar dasar, Teori Bilangan awal, & Logika.</p>
+                <button class="mt-6 w-full py-2 bg-slate-50 rounded-lg group-hover:bg-green-500 group-hover:text-white transition">Buka Materi</button>
+            </div>
+            <div class="bg-white border border-slate-200 rounded-2xl p-6 relative overflow-hidden group opacity-60">
+                <div class="absolute top-0 left-0 w-2 h-full bg-blue-400"></div>
+                <span class="text-xs font-bold text-blue-600">LEVEL 2</span>
+                <h3 class="font-bold text-xl mt-2">Intermediate</h3>
+                <p class="text-sm text-slate-500 mt-2">Kombinatorika lanjut & Geometri Bidang.</p>
+                <div class="mt-6 text-center"><i class="fas fa-lock text-slate-400"></i></div>
+            </div>
+            </div>
     </section>
-  </div>
 
-  <footer class="footer">
-    <div class="footer-content">
-      <div class="footer-info">
-        <h3>MathOly Library</h3>
-        <p>Membangun generasi olimpiade Indonesia yang kompetitif dan berwawasan luas.</p>
-      </div>
-      <div class="footer-bottom">
-        &copy; 2026 MathOly Project. Dibuat untuk tujuan edukasi.
-      </div>
-    </div>
-  </footer>
+    <section id="magazine" class="py-20 bg-slate-50 px-6">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex justify-between items-end mb-10">
+                <div>
+                    <h2 class="text-3xl font-bold">Math Magz</h2>
+                    <p class="text-slate-500">Berita olimpiade & fakta menarik dunia matematika.</p>
+                </div>
+                <button class="text-blue-600 font-semibold">Lihat Semua Artikel</button>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm">
+                    <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?auto=format&fit=crop&q=80&w=800" class="h-48 w-full object-cover" alt="News">
+                    <div class="p-6">
+                        <span class="text-xs font-bold text-orange-500">BERITA</span>
+                        <h4 class="font-bold mt-2 hover:text-blue-600 cursor-pointer">Persiapan IMO 2026 di Paris: Apa saja yang baru?</h4>
+                        <p class="text-sm text-slate-500 mt-3">Simak rangkuman perubahan regulasi dan tipe soal yang diprediksi muncul...</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm">
+                    <img src="https://images.unsplash.com/photo-1509228468518-180dd4864904?auto=format&fit=crop&q=80&w=800" class="h-48 w-full object-cover" alt="Facts">
+                    <div class="p-6">
+                        <span class="text-xs font-bold text-purple-500">FAKTA MENARIK</span>
+                        <h4 class="font-bold mt-2 hover:text-blue-600 cursor-pointer">Srinivasa Ramanujan: Sang Jenius Penguasa Tak Terhingga</h4>
+                        <p class="text-sm text-slate-500 mt-3">Kisah bagaimana mimpi membawa rumus-rumus ajaib ke dunia nyata.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <script src="app.js"></script>
 </body>
 </html>
