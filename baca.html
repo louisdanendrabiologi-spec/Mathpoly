@@ -1,1 +1,115 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MathQuest Magazine - Baca Artikel</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap');
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #ffffff; }
+        .article-content img { border-radius: 1.5rem; margin-bottom: 2rem; width: 100%; object-fit: cover; max-height: 400px; }
+    </style>
+</head>
+<body class="bg-slate-50">
 
+    <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-100 px-6 py-4 flex justify-between items-center">
+        <a href="index.html" class="flex items-center gap-2 text-slate-800 hover:text-blue-600 transition">
+            <i class="fas fa-arrow-left"></i>
+            <span class="font-bold">Kembali ke MathQuest</span>
+        </a>
+    </nav>
+
+    <main class="pt-32 pb-20 px-6">
+        <article class="max-w-3xl mx-auto bg-white p-8 md:p-12 rounded-[2.5rem] shadow-sm border border-slate-100">
+            <div id="loading-state" class="text-center py-20">
+                <i class="fas fa-spinner fa-spin text-3xl text-blue-500"></i>
+                <p class="mt-4 text-slate-400">Memuat artikel...</p>
+            </div>
+
+            <div id="article-body" class="hidden">
+                <span id="art-category" class="text-xs font-bold text-blue-600 uppercase tracking-widest bg-blue-50 px-3 py-1 rounded-full">Kategori</span>
+                <h1 id="art-title" class="text-3xl md:text-5xl font-bold text-slate-900 mt-4 mb-8 leading-tight">Judul Artikel</h1>
+                
+                <div id="art-image-container"></div>
+
+                <div id="art-content" class="article-content text-slate-600 leading-relaxed text-lg space-y-6">
+                    </div>
+
+                <div class="mt-12 pt-8 border-t border-slate-100">
+                    <p class="text-slate-400 text-sm italic">Ditulis untuk MathQuest Magazine oleh Tim Konten.</p>
+                </div>
+            </div>
+
+            <div id="error-state" class="hidden text-center py-20">
+                <h2 class="text-2xl font-bold text-slate-800">Artikel Tidak Ditemukan</h2>
+                <p class="text-slate-500 mt-2">Maaf, berita yang Anda cari mungkin telah dipindahkan.</p>
+                <a href="index.html" class="mt-6 inline-block bg-blue-600 text-white px-6 py-2 rounded-xl">Kembali ke Home</a>
+            </div>
+        </article>
+    </main>
+
+    <footer class="py-10 text-center text-slate-400 text-sm">
+        <p>&copy; 2026 MathQuest Magazine. Hak Cipta Dilindungi.</p>
+    </footer>
+
+    <script>
+        async function loadArticle() {
+            // 1. Ambil ID dari URL (?id=1)
+            const urlParams = new URLSearchParams(window.location.search);
+            const id = urlParams.get('id');
+
+            if (!id) {
+                showError();
+                return;
+            }
+
+            try {
+                // 2. Ambil data dari news.json
+                const response = await fetch('news.json');
+                const newsData = await response.json();
+
+                // 3. Cari berita yang ID-nya cocok
+                const article = newsData.find(item => item.id == id);
+
+                if (article) {
+                    displayArticle(article);
+                } else {
+                    showError();
+                }
+            } catch (error) {
+                console.error("Gagal memuat berita:", error);
+                showError();
+            }
+        }
+
+        function displayArticle(data) {
+            document.getElementById('loading-state').classList.add('hidden');
+            document.getElementById('article-body').classList.remove('hidden');
+
+            document.getElementById('art-title').innerText = data.title;
+            document.getElementById('art-category').innerText = data.category;
+            document.title = data.title + " - MathQuest Magazine";
+
+            if (data.img) {
+                document.getElementById('art-image-container').innerHTML = `<img src="${data.img}" alt="Thumbnail">`;
+            }
+
+            // Memasukkan konten (jika di news.json ada properti "content", pakai itu. Jika tidak, pakai "desc")
+            const isiBerita = data.content ? data.content : data.desc;
+            
+            // Mengubah baris baru (\n) menjadi tag paragraf agar rapi
+            const formattedContent = isiBerita.split('\n').map(p => `<p class="mb-4">${p}</p>`).join('');
+            document.getElementById('art-content').innerHTML = formattedContent;
+        }
+
+        function showError() {
+            document.getElementById('loading-state').classList.add('hidden');
+            document.getElementById('error-state').classList.remove('hidden');
+        }
+
+        window.onload = loadArticle;
+    </script>
+</body>
+</html>
