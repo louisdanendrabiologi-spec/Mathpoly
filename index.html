@@ -40,14 +40,14 @@
         <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
             <div class="flex-1">
                 <h1 class="text-4xl md:text-6xl font-bold text-slate-800 leading-tight">Raih Poin, Koleksi <span class="text-blue-600">Lencana Emas.</span></h1>
-                <p class="mt-6 text-slate-600 text-lg">Pusat materi OSN & IMO terlengkap. Belajar bertahap dengan tantangan harian.</p>
+                <p class="mt-6 text-slate-600 text-lg leading-relaxed">Latihan soal OSN & IMO setiap hari. Kumpulkan poin dan jadilah sang juara!</p>
                 <div class="mt-8 flex flex-wrap gap-4">
                     <a href="#quiz-section" class="bg-slate-800 text-white px-8 py-3 rounded-xl hover:bg-slate-700 transition shadow-lg">Mulai Kuis</a>
                     <a href="#soal" class="bg-white border border-slate-300 px-8 py-3 rounded-xl hover:bg-slate-50 transition text-slate-600 text-center font-medium">Lihat Bank Soal</a>
                 </div>
             </div>
             
-            <div id="user-status-card" class="flex-1 bg-white p-8 rounded-3xl shadow-xl border border-slate-100">
+            <div class="flex-1 bg-white p-8 rounded-3xl shadow-xl border border-slate-100">
                 <div class="flex items-center gap-4 mb-6">
                     <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center text-2xl text-blue-600">
                         <i class="fas fa-user-graduate"></i>
@@ -73,23 +73,17 @@
 
     <section id="quiz-section" class="py-20 bg-white px-6">
         <div class="max-w-4xl mx-auto">
-            <div class="bg-slate-50 rounded-3xl p-8 border border-slate-200 shadow-sm">
+            <div class="bg-slate-50 rounded-3xl p-8 border border-slate-200 shadow-sm relative overflow-hidden">
                 <div id="quiz-container">
-                    <h2 class="text-2xl font-bold text-slate-800 mb-2">Daily Math Challenge</h2>
-                    <p class="text-slate-500 mb-6">Selesaikan soal ini untuk mendapatkan 100 poin!</p>
+                    <h2 class="text-2xl font-bold text-slate-800 mb-2">Daily Challenge</h2>
+                    <p class="text-slate-500 mb-6 font-medium">Selesaikan soal ini untuk +100 poin!</p>
                     
-                    <div class="bg-white p-6 rounded-2xl border border-slate-100 mb-6">
-                        <p class="font-semibold text-lg text-slate-700" id="question-text">
-                            Berapa sisa pembagian 3<sup>2024</sup> oleh 10?
-                        </p>
+                    <div class="bg-white p-6 rounded-2xl border border-slate-100 mb-6 shadow-sm">
+                        <p class="font-semibold text-lg text-slate-700" id="question-text">Memuat soal...</p>
                     </div>
 
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4" id="answer-options">
-                        <button onclick="checkAnswer(1)" class="p-4 bg-white border border-slate-200 rounded-xl hover:border-blue-500 hover:bg-blue-50 transition text-left font-medium">A. 1</button>
-                        <button onclick="checkAnswer(3)" class="p-4 bg-white border border-slate-200 rounded-xl hover:border-blue-500 hover:bg-blue-50 transition text-left font-medium">B. 3</button>
-                        <button onclick="checkAnswer(9)" class="p-4 bg-white border border-slate-200 rounded-xl hover:border-blue-500 hover:bg-blue-50 transition text-left font-medium">C. 9</button>
-                        <button onclick="checkAnswer(7)" class="p-4 bg-white border border-slate-200 rounded-xl hover:border-blue-500 hover:bg-blue-50 transition text-left font-medium">D. 7</button>
-                    </div>
+                        </div>
                 </div>
             </div>
         </div>
@@ -98,8 +92,8 @@
     <section id="magazine" class="py-20 bg-slate-50 px-6">
         <div class="max-w-6xl mx-auto">
             <h2 class="text-3xl font-bold mb-10 text-slate-800">MathQuest Magazine</h2>
-            <div id="news-container" class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <p class="text-slate-400 col-span-full text-center">Memuat berita terbaru...</p>
+            <div id="news-container" class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                <p class="text-slate-400 col-span-full py-10">Memuat berita terbaru...</p>
             </div>
         </div>
     </section>
@@ -107,13 +101,13 @@
     <section id="soal" class="py-20 bg-white px-6">
         <div class="max-w-6xl mx-auto">
             <h2 class="text-3xl font-bold mb-10 text-slate-800">Kumpulan Materi & Arsip</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
                 <div class="flex items-center justify-between p-5 bg-white border border-slate-200 rounded-2xl card-hover border-l-4 border-l-blue-500">
                     <div class="flex items-center gap-4">
-                        <div class="bg-red-50 p-3 rounded-xl text-red-500 text-xl"><i class="fas fa-trophy"></i></div>
+                        <div class="bg-red-50 p-3 rounded-xl text-red-500 text-xl"><i class="fas fa-file-pdf"></i></div>
                         <div>
                             <p class="font-bold text-slate-800">PelatGratis_A1</p>
-                            <p class="text-xs text-slate-400 font-medium uppercase">OSN-K</p>
+                            <p class="text-[10px] text-slate-400 font-bold uppercase tracking-widest">OSN-K • ALGEBRA</p>
                         </div>
                     </div>
                     <a href="assets/pdf/PelatGratis_A1.pdf" target="_blank" class="bg-slate-100 text-slate-600 px-4 py-2 rounded-lg text-sm font-bold hover:bg-blue-600 hover:text-white transition">Buka</a>
@@ -123,8 +117,8 @@
                     <div class="flex items-center gap-4">
                         <div class="bg-blue-50 p-3 rounded-xl text-blue-500 text-xl"><i class="fas fa-trophy"></i></div>
                         <div>
-                            <p class="font-bold text-slate-800">IMO2024SL</p>
-                            <p class="text-xs text-slate-400 font-medium uppercase">IMO</p>
+                            <p class="font-bold text-slate-800">IMO 2024 Shortlist</p>
+                            <p class="text-[10px] text-slate-400 font-bold uppercase tracking-widest">World Class • IMO</p>
                         </div>
                     </div>
                     <a href="assets/pdf/IMO2024SL.pdf" target="_blank" class="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-bold shadow-md shadow-blue-200">Download</a>
@@ -132,43 +126,55 @@
                 
                 <div class="flex items-center justify-between p-5 bg-white border border-slate-200 rounded-2xl card-hover border-l-4 border-l-blue-500">
                     <div class="flex items-center gap-4">
-                        <div class="bg-blue-50 p-3 rounded-xl text-blue-500 text-xl"><i class="fas fa-trophy"></i></div>
+                        <div class="bg-blue-50 p-3 rounded-xl text-blue-500 text-xl"><i class="fas fa-square-root-alt"></i></div>
                         <div>
                             <p class="font-bold text-slate-800">Pertidaksamaan</p>
-                            <p class="text-xs text-slate-400 font-medium uppercase">OSN-P</p>
+                            <p class="text-[10px] text-slate-400 font-bold uppercase tracking-widest">OSN-P • ANALYSIS</p>
                         </div>
                     </div>
-                    <a href="assets/pdf/Pertidaksamaan.pdf" target="_blank" class="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-bold shadow-md shadow-blue-200">Download</a>
+                    <a href="assets/pdf/Pertidaksamaan.pdf" target="_blank" class="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-bold shadow-md shadow-blue-200">Buka</a>
                 </div>
-                
+
                 <div class="flex items-center justify-between p-5 bg-white border border-slate-200 rounded-2xl card-hover border-l-4 border-l-blue-500">
                     <div class="flex items-center gap-4">
-                        <div class="bg-blue-50 p-3 rounded-xl text-blue-500 text-xl"><i class="fas fa-trophy"></i></div>
+                        <div class="bg-blue-50 p-3 rounded-xl text-blue-500 text-xl"><i class="fas fa-shapes"></i></div>
                         <div>
-                            <p class="font-bold text-slate-800">Kombinatorika_Tambahan</p>
-                            <p class="text-xs text-slate-400 font-medium uppercase">OSN-K</p>
+                            <p class="font-bold text-slate-800">Kombinatorika Tambahan</p>
+                            <p class="text-[10px] text-slate-400 font-bold uppercase tracking-widest">OSN-K • COUNTING</p>
                         </div>
                     </div>
-                    <a href="assets/pdf/Kombinatorika_Tambahan.pdf" target="_blank" class="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-bold shadow-md shadow-blue-200">Download</a>
+                    <a href="assets/pdf/Kombinatorika_Tambahan.pdf" target="_blank" class="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-bold shadow-md shadow-blue-200">Buka</a>
                 </div>
             </div>
         </div>
     </section>
+
+    <footer class="py-10 text-center text-slate-400 text-sm border-t border-slate-100">
+        <p>&copy; 2026 MathQuest. Semangat Belajarnya, Louis!</p>
+    </footer>
+
+    <div id="article-modal" class="modal px-4">
+        <div class="bg-white rounded-3xl w-full max-w-2xl max-h-[80vh] overflow-y-auto p-8 relative shadow-2xl">
+            <button onclick="toggleModal('article-modal')" class="sticky top-0 float-right text-slate-400 hover:text-slate-600"><i class="fas fa-times text-xl"></i></button>
+            <div id="article-content">
+                </div>
+        </div>
+    </div>
 
     <div id="login-modal" class="modal">
         <div class="bg-white p-8 rounded-3xl w-full max-w-md relative shadow-2xl mx-4">
             <button onclick="toggleModal('login-modal')" class="absolute top-4 right-4 text-slate-400"><i class="fas fa-times"></i></button>
             <div class="text-center mb-6">
                 <h2 class="text-2xl font-bold text-slate-800">Halo, Siapa Namamu?</h2>
-                <p class="text-slate-500 text-sm mt-1">Masukkan nama untuk menyimpan poin belajar.</p>
+                <p class="text-slate-500 text-sm mt-1">Masukkan nama untuk menyimpan progres.</p>
             </div>
-            <input type="text" id="input-name" placeholder="Nama Lengkap" class="w-full p-4 bg-slate-50 rounded-2xl mb-6 border border-slate-200 focus:ring-4 focus:ring-blue-100 outline-none transition-all">
-            <button onclick="handleLogin()" class="w-full bg-blue-600 text-white p-4 rounded-2xl font-bold hover:bg-blue-700 shadow-lg shadow-blue-200 transition-all">Mulai Belajar</button>
+            <input type="text" id="input-name" placeholder="Nama Lengkap" class="w-full p-4 bg-slate-50 rounded-2xl mb-6 border border-slate-200 outline-none focus:ring-4 focus:ring-blue-100 transition-all">
+            <button onclick="handleLogin()" class="w-full bg-blue-600 text-white p-4 rounded-2xl font-bold hover:bg-blue-700 shadow-lg transition-all">Mulai Petualangan</button>
         </div>
     </div>
 
     <script>
-        // 1. DATA USER & POIN
+        // 1. DATA MASTER
         let userData = JSON.parse(localStorage.getItem('mathQuest_User')) || {
             name: "Siswa Tamu",
             points: 0,
@@ -176,19 +182,27 @@
             isLoggedIn: false
         };
 
+        const kuisBank = [
+            { q: "Berapa sisa pembagian 3<sup>2024</sup> oleh 10?", a: [1, 3, 9, 7], correct: 1 },
+            { q: "Jika x + 2 = 5, maka nilai x adalah...", a: [1, 2, 3, 4], correct: 3 },
+            { q: "Jumlah sudut dalam sebuah segitiga adalah...", a: [90, 180, 270, 360], correct: 180 },
+            { q: "Banyaknya faktor positif dari bilangan 12 adalah...", a: [4, 5, 6, 8], correct: 6 }
+        ];
+
+        let globalNewsData = [];
+
+        // 2. SISTEM CORE
         function updateStats() {
             document.getElementById('display-name').innerText = userData.name;
             document.getElementById('user-points').innerText = userData.points.toLocaleString();
             document.getElementById('user-badges').innerText = userData.badges;
             
-            // Logika Level
             let level = "Novice";
             if(userData.points >= 500) level = "Apprentice";
             if(userData.points >= 1500) level = "Expert";
             if(userData.points >= 3000) level = "Legend";
             document.getElementById('user-level').innerText = "Level: " + level;
 
-            // Update Navigasi
             const authSec = document.getElementById('auth-section');
             if(userData.isLoggedIn) {
                 authSec.innerHTML = `
@@ -202,40 +216,74 @@
         }
 
         function tambahPoin(n) {
-            if(!userData.isLoggedIn) {
-                toggleModal('login-modal');
-                return;
-            }
+            if(!userData.isLoggedIn) { toggleModal('login-modal'); return; }
             userData.points += n;
-            if(userData.points >= 500 && userData.badges < 1) {
-                userData.badges = 1;
-            }
+            if(userData.points >= 500 && userData.badges < 1) userData.badges = 1;
             updateStats();
         }
 
-        // 2. KUIS INTERAKTIF
-        function checkAnswer(val) {
-            if(!userData.isLoggedIn) {
-                alert("Silakan masuk/login dulu untuk dapat poin!");
-                toggleModal('login-modal');
-                return;
-            }
-            if(val === 1) {
-                alert("Tepat sekali! Kamu mendapatkan +100 poin.");
+        // 3. LOGIKA KUIS
+        function loadQuiz() {
+            const randomQuiz = kuisBank[Math.floor(Math.random() * kuisBank.length)];
+            document.getElementById('question-text').innerHTML = randomQuiz.q;
+            
+            const optionsHtml = randomQuiz.a.map(opt => `
+                <button onclick="checkAnswer(${opt}, ${randomQuiz.correct})" 
+                        class="p-4 bg-white border border-slate-200 rounded-xl hover:border-blue-500 hover:bg-blue-50 transition text-left font-medium">
+                    ${opt}
+                </button>
+            `).join('');
+            document.getElementById('answer-options').innerHTML = optionsHtml;
+        }
+
+        function checkAnswer(pilihan, benar) {
+            if(pilihan === benar) {
+                alert("🎉 Hebat! Jawaban Benar. +100 Poin!");
                 tambahPoin(100);
-                document.getElementById('quiz-container').innerHTML = `
-                    <div class="text-center py-10">
-                        <div class="text-5xl mb-4">🎉</div>
-                        <h3 class="text-xl font-bold text-slate-800">Tantangan Berhasil!</h3>
-                        <p class="text-slate-500">Poin sudah ditambahkan ke profilmu.</p>
-                    </div>
-                `;
+                loadQuiz(); // Ganti soal otomatis
             } else {
-                alert("Jawaban salah, coba ingat lagi pola satuan pangkat 3!");
+                alert("❌ Kurang tepat, coba lagi!");
             }
         }
 
-        // 3. LOGIN & MODAL
+        // 4. MAGAZINE & ARTIKEL
+        async function loadNews() {
+            try {
+                const response = await fetch('news.json');
+                globalNewsData = await response.json();
+                const container = document.getElementById('news-container');
+                
+                container.innerHTML = globalNewsData.map((item, index) => `
+                    <div onclick="openArticle(${index})" class="bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-100 card-hover cursor-pointer text-left">
+                        <img src="${item.img}" class="h-48 w-full object-cover">
+                        <div class="p-6">
+                            <span class="text-[10px] font-bold text-blue-500 uppercase tracking-widest bg-blue-50 px-2 py-1 rounded">${item.category}</span>
+                            <h4 class="font-bold mt-3 text-slate-800 leading-tight">${item.title}</h4>
+                            <p class="text-xs text-slate-400 mt-2">Klik untuk membaca artikel lengkap →</p>
+                        </div>
+                    </div>
+                `).join('');
+            } catch (e) {
+                document.getElementById('news-container').innerHTML = "<p class='col-span-full opacity-50'>File news.json tidak ditemukan.</p>";
+            }
+        }
+
+        function openArticle(index) {
+            const news = globalNewsData[index];
+            const content = `
+                <img src="${news.img}" class="w-full h-64 object-cover rounded-2xl mb-6">
+                <span class="text-xs font-bold text-blue-500 uppercase tracking-widest">${news.category}</span>
+                <h2 class="text-3xl font-bold text-slate-800 mt-2 mb-4">${news.title}</h2>
+                <div class="prose prose-slate text-slate-600 leading-relaxed">
+                    <p class="mb-4">${news.desc}</p>
+                    <p>${news.content || "Isi artikel lengkap akan segera hadir. Terus pantau MathQuest untuk update terbaru seputar olimpiade matematika!"}</p>
+                </div>
+            `;
+            document.getElementById('article-content').innerHTML = content;
+            toggleModal('article-modal');
+        }
+
+        // 5. AUTH & MODAL
         function toggleModal(id) {
             document.getElementById(id).classList.toggle('active');
         }
@@ -255,30 +303,10 @@
             location.reload();
         }
 
-        // 4. LOAD MAGAZINE (NEWS.JSON)
-        async function loadNews() {
-            try {
-                const response = await fetch('news.json');
-                const newsData = await response.json();
-                const container = document.getElementById('news-container');
-                container.innerHTML = newsData.map(item => `
-                    <div class="bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-100 card-hover">
-                        <img src="${item.img}" class="h-48 w-full object-cover">
-                        <div class="p-6">
-                            <span class="text-[10px] font-bold text-blue-500 uppercase tracking-widest bg-blue-50 px-2 py-1 rounded">${item.category}</span>
-                            <h4 class="font-bold mt-3 text-slate-800">${item.title}</h4>
-                            <p class="text-sm text-slate-500 mt-2">${item.desc}</p>
-                        </div>
-                    </div>
-                `).join('');
-            } catch (e) {
-                document.getElementById('news-container').innerHTML = "<p class='col-span-full text-slate-400 text-center py-10'>Belum ada berita (Jangan lupa upload news.json).</p>";
-            }
-        }
-
         window.onload = () => {
             updateStats();
             loadNews();
+            loadQuiz();
         };
     </script>
 </body>
