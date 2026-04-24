@@ -13,24 +13,26 @@
         .nav-blur { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(10px); }
         .modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 100; align-items: center; justify-content: center; }
         .modal.active { display: flex; }
+        .card-hover { transition: all 0.3s ease; }
+        .card-hover:hover { transform: translateY(-5px); box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1); }
     </style>
 </head>
 <body>
 
     <nav class="fixed w-full z-50 nav-blur border-b border-slate-200 px-6 py-3 flex justify-between items-center">
-        <div class="flex items-center gap-2 cursor-pointer" onclick="window.location.href='index.html'">
+        <div class="flex items-center gap-2 cursor-pointer" onclick="window.scrollTo(0,0)">
             <div class="bg-blue-600 text-white p-2 rounded-lg"><i class="fas fa-infinity"></i></div>
             <span class="font-bold text-xl tracking-tight text-slate-800">MathQuest</span>
         </div>
         <div class="hidden md:flex space-x-6 text-sm font-medium">
             <a href="#" class="text-blue-600">Home</a>
-            <a href="#materi" class="hover:text-blue-500 transition">Materi</a>
-            <a href="#soal" class="hover:text-blue-500 transition">Bank Soal</a>
             <a href="#magazine" class="hover:text-blue-500 transition">Magazine</a>
+            <a href="#soal" class="hover:text-blue-500 transition">Bank Soal</a>
+            <a href="#ranking" class="hover:text-blue-500 transition">Ranking</a>
         </div>
         <div id="auth-section" class="flex items-center gap-4">
             <button onclick="toggleModal('login-modal')" class="text-sm font-semibold">Masuk</button>
-            <button onclick="toggleModal('login-modal')" class="bg-blue-600 text-white px-5 py-2 rounded-full text-sm font-semibold hover:shadow-lg transition">Daftar</button>
+            <button onclick="toggleModal('login-modal')" class="bg-blue-600 text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-blue-700 transition">Daftar</button>
         </div>
     </nav>
 
@@ -38,139 +40,50 @@
         <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
             <div class="flex-1">
                 <h1 class="text-4xl md:text-6xl font-bold text-slate-800 leading-tight">Raih Poin, Koleksi <span class="text-blue-600">Lencana Emas.</span></h1>
-                <p class="mt-6 text-slate-600 text-lg">Pusat materi OSN & IMO terlengkap. Belajar bertahap dari pemula hingga master.</p>
-                <div class="mt-8 flex gap-4">
-                    <button onclick="tambahPoin(10)" class="bg-slate-800 text-white px-8 py-3 rounded-xl hover:bg-slate-700 transition">Coba Tambah Poin</button>
-                    <a href="#soal" class="border border-slate-300 px-8 py-3 rounded-xl hover:bg-white transition text-slate-600 text-center">Buka Bank Soal</a>
+                <p class="mt-6 text-slate-600 text-lg leading-relaxed">Pusat materi OSN & IMO terlengkap. Belajar bertahap dengan kurikulum yang ramah pemula.</p>
+                <div class="mt-8 flex flex-wrap gap-4">
+                    <button onclick="tambahPoin(50)" class="bg-slate-800 text-white px-8 py-3 rounded-xl hover:bg-slate-700 transition shadow-lg">Ambil Poin Harian</button>
+                    <a href="#soal" class="bg-white border border-slate-300 px-8 py-3 rounded-xl hover:bg-slate-50 transition text-slate-600 text-center font-medium">Buka Bank Soal</a>
                 </div>
             </div>
             
             <div id="user-status-card" class="flex-1 bg-white p-8 rounded-3xl shadow-xl border border-slate-100">
                 <div class="flex items-center gap-4 mb-6">
                     <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center text-2xl text-blue-600">
-                        <i class="fas fa-user"></i>
+                        <i class="fas fa-user-graduate"></i>
                     </div>
                     <div>
                         <h3 class="font-bold text-xl" id="display-name">Siswa Tamu</h3>
-                        <p class="text-slate-400 text-sm">Level 1: Novice</p>
+                        <p class="text-slate-400 text-sm font-medium" id="user-level">Level: Novice</p>
                     </div>
                 </div>
                 <div class="grid grid-cols-2 gap-4">
-                    <div class="bg-slate-50 p-4 rounded-2xl">
-                        <span class="block text-slate-400 text-xs uppercase font-bold">Total Poin</span>
+                    <div class="bg-blue-50 p-4 rounded-2xl border border-blue-100">
+                        <span class="block text-slate-400 text-xs uppercase font-bold tracking-wider">Total Poin</span>
                         <span class="text-2xl font-bold text-blue-600" id="user-points">0</span>
                     </div>
-                    <div class="bg-slate-50 p-4 rounded-2xl">
-                        <span class="block text-slate-400 text-xs uppercase font-bold">Lencana</span>
-                        <span class="text-2xl font-bold text-yellow-500" id="user-badges">0</span>
+                    <div class="bg-yellow-50 p-4 rounded-2xl border border-yellow-100">
+                        <span class="block text-slate-400 text-xs uppercase font-bold tracking-wider">Lencana</span>
+                        <span class="text-2xl font-bold text-yellow-600" id="user-badges">0</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="magazine" class="py-20 bg-slate-50 px-6">
+    <section id="magazine" class="py-20 bg-white px-6">
         <div class="max-w-6xl mx-auto">
-            <h2 class="text-3xl font-bold mb-8 text-center md:text-left">Berita</h2>
-            <div id="news-container" class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <p class="text-slate-400">Memuat berita terbaru...</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="soal" class="py-20 px-6 max-w-6xl mx-auto">
-        <h2 class="text-3xl font-bold mb-8">Kumpulan Materi PDF</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div class="flex items-center justify-between p-4 bg-white border border-slate-200 rounded-xl hover:shadow-md transition">
-                <div class="flex items-center gap-4">
-                    <i class="fas fa-file-pdf text-red-500 text-2xl"></i>
-                    <div>
-                        <p class="font-bold">Diktat Aljabar - ABTJOG</p>
-                        <p class="text-xs text-slate-400">PDF • 5.2 MB</p>
-                    </div>
+            <div class="flex justify-between items-end mb-10">
+                <div>
+                    <h2 class="text-3xl font-bold text-slate-800">MathQuest Magz</h2>
+                    <p class="text-slate-500 mt-2">Berita olimpiade & fakta unik matematika dunia.</p>
                 </div>
-                <a href="assets/pdf/aljabar.pdf" target="_blank" class="bg-blue-100 text-blue-600 px-4 py-2 rounded-lg text-sm font-bold">Buka</a>
+            </div>
+            <div id="news-container" class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                <p class="text-slate-400 col-span-full py-10">Memuat berita terbaru...</p>
             </div>
         </div>
     </section>
 
-    <div id="login-modal" class="modal">
-        <div class="bg-white p-8 rounded-3xl w-full max-w-md relative shadow-2xl mx-4">
-            <button onclick="toggleModal('login-modal')" class="absolute top-4 right-4 text-slate-400"><i class="fas fa-times"></i></button>
-            <h2 class="text-2xl font-bold mb-6 text-center">Masuk ke MathQuest</h2>
-            <input type="text" id="input-name" placeholder="Nama Lengkap" class="w-full p-4 bg-slate-100 rounded-xl mb-4 border-none focus:ring-2 focus:ring-blue-500 outline-none">
-            <button onclick="handleLogin()" class="w-full bg-blue-600 text-white p-4 rounded-xl font-bold hover:bg-blue-700 transition">Mulai Belajar Sekarang</button>
-        </div>
-    </div>
+    
 
-    <script>
-        // 1. DATA USER & SISTEM POIN
-        let userData = JSON.parse(localStorage.getItem('mathQuest_User')) || {
-            name: "Tamu",
-            points: 0,
-            badges: 0,
-            isLoggedIn: false
-        };
-
-        function updateStats() {
-            document.getElementById('display-name').innerText = userData.name;
-            document.getElementById('user-points').innerText = userData.points;
-            document.getElementById('user-badges').innerText = userData.badges;
-            localStorage.setItem('mathQuest_User', JSON.stringify(userData));
-        }
-
-        function tambahPoin(n) {
-            userData.points += n;
-            if(userData.points >= 100 && userData.badges < 1) {
-                userData.badges = 1;
-                alert("🎉 Selamat! Kamu mendapatkan lencana pertama!");
-            }
-            updateStats();
-        }
-
-        // 2. MODAL & LOGIN
-        function toggleModal(id) {
-            document.getElementById(id).classList.toggle('active');
-        }
-
-        function handleLogin() {
-            const nameInput = document.getElementById('input-name').value;
-            if (nameInput.trim() !== "") {
-                userData.name = nameInput;
-                userData.isLoggedIn = true;
-                updateStats();
-                toggleModal('login-modal');
-                alert("Halo " + nameInput + ", selamat belajar!");
-            }
-        }
-
-        // 3. LOAD NEWS DARI JSON
-        async function loadNews() {
-            try {
-                const response = await fetch('news.json');
-                const newsData = await response.json();
-                const container = document.getElementById('news-container');
-                
-                container.innerHTML = newsData.map(item => `
-                    <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition">
-                        <img src="${item.img}" class="h-48 w-full object-cover">
-                        <div class="p-6">
-                            <span class="text-xs font-bold text-blue-500 uppercase">${item.category}</span>
-                            <h4 class="font-bold mt-2">${item.title}</h4>
-                            <p class="text-sm text-slate-500 mt-3">${item.desc}</p>
-                        </div>
-                    </div>
-                `).join('');
-            } catch (e) {
-                document.getElementById('news-container').innerHTML = "<p class='text-slate-400'>Belum ada berita (Jangan lupa upload news.json ke GitHub).</p>";
-            }
-        }
-
-        // Jalankan saat halaman siap
-        window.onload = () => {
-            updateStats();
-            loadNews();
-        };
-    </script>
-</body>
-</html>
