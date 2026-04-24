@@ -3,8 +3,16 @@
     "id": 1,
     "category": "Berita",
     "title": "Persiapan OSN 2026",
-    "desc": "Tips menghadapi kombinatorika.",
-    "content": "Ini adalah isi artikel lengkap yang akan muncul di halaman baca. Gunakan tanda slash n untuk baris baru.",
+    "desc": "Tips dan trik menghadapi soal kombinatorika.",
+    "content": "Kombinatorika seringkali menjadi tantangan besar. Langkah pertama adalah menguasai Prinsip Inklusi-Eksklusi. \n\nKedua, pelajari teknik 'Stars and Bars' untuk pembagian objek identik. Jangan lupa perbanyak latihan soal dari arsip tahun-tahun sebelumnya untuk membiasakan diri dengan pola soal yang muncul.",
     "img": "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=800"
+  },
+  {
+    "id": 2,
+    "category": "Materi",
+    "title": "Mengenal Teorema Ptolemy",
+    "desc": "Cara cepat mengerjakan soal geometri pada segi empat tali busur.",
+    "content": "Teorema Ptolemy menyatakan bahwa untuk segi empat tali busur, hasil kali diagonalnya sama dengan jumlah hasil kali sisi-sisi yang berhadapan. \n\nRumus ini sangat sakti untuk soal-soal geometri tingkat provinsi maupun nasional.",
+    "img": "https://www2.hao.ucar.edu/education/scientists/claudius-ptolemy-100-170"
   }
 ]
