@@ -1,17 +1,16 @@
 [
   {
     "id": 1,
-    "category": "BERITA",
-    "title": "Persiapan IMO 2026 di Paris",
-    "desc": "Simak rangkuman perubahan regulasi dan tipe soal tahun ini.",
-    "img": "https://images.unsplash.com/photo-1635070041078-e363dbe005cb"
+    "category": "Berita",
+    "title": "Persiapan OSN 2026",
+    "desc": "Tips dan trik menghadapi soal kombinatorika tingkat provinsi.",
+    "img": "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=800"
   },
   {
     "id": 2,
-    "category": "FAKTA",
-    "title": "Srinivasa Ramanujan",
-    "desc": "Kisah sang jenius yang menemukan rumus dalam mimpi.",
-    "img": "https://images.unsplash.com/photo-1509228468518-180dd4864904"
+    "category": "Fakta",
+    "title": "Misteri Hipotesis Riemann",
+    "desc": "Mengenal salah satu masalah matematika tersulit di dunia yang belum terpecahkan.",
+    "img": "https://images.unsplash.com/photo-1509228468518-180dd4864904?w=800"
   }
 ]
-
