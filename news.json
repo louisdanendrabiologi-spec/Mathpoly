@@ -3,22 +3,8 @@
     "id": 1,
     "category": "Berita",
     "title": "Persiapan OSN 2026",
-    "desc": "Tips dan trik menghadapi soal kombinatorika tingkat provinsi.",
-    "img": "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=800"
-  },
-  {
-    "id": 2,
-    "category": "Fakta",
-    "title": "Misteri Hipotesis Riemann",
-    "desc": "Mengenal salah satu masalah matematika tersulit di dunia yang belum terpecahkan.",
-    "img": "https://images.unsplash.com/photo-1509228468518-180dd4864904?w=800"
-  },
-  {
-    "id": 1,
-    "category": "Berita",
-    "title": "Persiapan OSN 2026",
-    "desc": "Tips dan trik menghadapi soal kombinatorika.",
-    "content": "Kombinatorika seringkali menjadi momok bagi peserta OSN Matematika. Namun, dengan penguasaan konsep multiset dan permutasi yang kuat, soal-soal sulit bisa disederhanakan.\nLangkah pertama dalam belajar adalah memahami Prinsip Inklusi-Eksklusi. Jangan lupa untuk sering berlatih soal-soal dari tahun sebelumnya.",
+    "desc": "Tips menghadapi kombinatorika.",
+    "content": "Ini adalah isi artikel lengkap yang akan muncul di halaman baca. Gunakan tanda slash n untuk baris baru.",
     "img": "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=800"
   }
 ]
