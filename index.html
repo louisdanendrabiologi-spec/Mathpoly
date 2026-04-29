@@ -9,8 +9,10 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap');
         body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #f8fafc; scroll-behavior: smooth; }
+        
+        /* Hero dengan Foto OSN agar kerasa atmosfer olimpiadenya */
         .hero-bg { 
-            background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.8)), 
+            background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.85)), 
             url('https://images.unsplash.com/photo-1635070041078-e363dbe005cb?q=80&w=2070'); 
             background-size: cover; background-position: center;
         }
@@ -29,31 +31,41 @@
             <span class="font-bold text-xl tracking-tight text-slate-800">MathQuest</span>
         </div>
         <div id="auth-section" class="flex items-center gap-4">
-            <button onclick="toggleModal('login-modal')" class="bg-blue-600 text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-blue-700 transition">Profil</button>
+            <button onclick="toggleModal('login-modal')" class="bg-blue-600 text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-blue-700 transition shadow-md">
+                <i class="fas fa-user-circle mr-2"></i>Profil
+            </button>
         </div>
     </nav>
 
     <section class="pt-32 pb-24 px-6 hero-bg text-white">
         <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
             <div class="flex-1">
-                <span class="bg-blue-600 text-xs font-bold px-3 py-1 rounded-full mb-4 inline-block">ROAD TO OSN 2026</span>
-                <h1 class="text-4xl md:text-6xl font-bold leading-tight">Taklukkan Tantangan <span class="text-blue-400">Matematika.</span></h1>
-                <p class="mt-6 text-slate-300 text-lg">Wadahi ambisimu dengan latihan soal standar IMO dan bank soal terlengkap.</p>
-                <div class="mt-8 flex flex-wrap gap-4">
-                    <a href="#quiz-section" class="bg-white text-slate-900 px-8 py-3 rounded-xl font-bold hover:bg-blue-50 transition">Challenge Hari Ini</a>
+                <span class="bg-yellow-500 text-slate-900 text-[10px] font-extrabold px-3 py-1 rounded-full mb-4 inline-block tracking-tighter">OFFICIAL MATHQUEST PLATFORM</span>
+                <h1 class="text-4xl md:text-6xl font-bold leading-tight">Raih Medali, <br><span class="text-blue-400">Ukir Prestasi.</span></h1>
+                <p class="mt-6 text-slate-300 text-lg">Pusat pelatihan OSN & IMO terlengkap untuk pejuang olimpiade Indonesia.</p>
+                <div class="mt-8 flex gap-4">
+                    <a href="#quiz-section" class="bg-blue-600 text-white px-8 py-3 rounded-xl font-bold hover:bg-blue-700 transition shadow-lg shadow-blue-900/20">Mulai Kuis</a>
                 </div>
             </div>
             
-            <div class="flex-1 bg-white/10 backdrop-blur-md p-8 rounded-3xl border border-white/20">
-                <h3 class="font-bold text-xl mb-4 text-white" id="display-name">Siswa Tamu</h3>
+            <div class="flex-1 bg-white/10 backdrop-blur-md p-8 rounded-3xl border border-white/20 w-full">
+                <div class="flex items-center gap-4 mb-6">
+                    <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center text-xl">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-xl" id="display-name">Siswa Tamu</h3>
+                        <p class="text-blue-300 text-xs font-bold uppercase tracking-widest" id="user-level">Rank: Novice</p>
+                    </div>
+                </div>
                 <div class="grid grid-cols-2 gap-4">
-                    <div class="bg-white/10 p-4 rounded-2xl">
-                        <span class="text-xs uppercase opacity-60">Total Poin</span>
+                    <div class="bg-black/20 p-4 rounded-2xl">
+                        <span class="text-[10px] uppercase opacity-60 font-bold">Total Poin</span>
                         <span class="block text-2xl font-bold" id="user-points">0</span>
                     </div>
-                    <div class="bg-white/10 p-4 rounded-2xl">
-                        <span class="text-xs uppercase opacity-60">Pangkat</span>
-                        <span class="block text-lg font-bold" id="user-level">Novice</span>
+                    <div class="bg-black/20 p-4 rounded-2xl">
+                        <span class="text-[10px] uppercase opacity-60 font-bold">Lencana</span>
+                        <span class="block text-2xl font-bold" id="user-badges">0</span>
                     </div>
                 </div>
             </div>
@@ -61,67 +73,109 @@
     </section>
 
     <section id="quiz-section" class="py-20 bg-white px-6">
-        <div class="max-w-3xl mx-auto text-center">
-            <h2 class="text-3xl font-bold text-slate-800 mb-2">Daily Math Challenge</h2>
-            <p class="text-slate-500 mb-8">Hanya bisa dikerjakan sekali sehari. Berikan yang terbaik!</p>
-            
-            <div id="quiz-container" class="bg-slate-50 rounded-3xl p-8 border border-slate-200">
+        <div class="max-w-3xl mx-auto">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-bold text-slate-800">Daily Math Challenge</h2>
+                <p class="text-slate-500 mt-2 italic">Kesempatan hanya datang sekali sehari. Jangan sia-siakan!</p>
+            </div>
+            <div id="quiz-container" class="bg-slate-50 rounded-[2.5rem] p-8 md:p-12 border border-slate-200 shadow-sm transition-all">
                 </div>
         </div>
     </section>
 
     <section id="magazine" class="py-20 bg-slate-50 px-6">
         <div class="max-w-6xl mx-auto">
-            <div class="flex justify-between items-end mb-10">
-                <h2 class="text-3xl font-bold text-slate-800">MathQuest Magazine</h2>
-                <button onclick="alert('Halaman Arsip Berita sedang dibuat!')" class="text-blue-600 font-bold text-sm">Lihat Semua →</button>
+            <div class="flex justify-between items-end mb-12">
+                <div>
+                    <h2 class="text-3xl font-bold text-slate-800">MathQuest Magazine</h2>
+                    <p class="text-slate-500">Berita dan tips terbaru dari para juara.</p>
+                </div>
+                <button onclick="alert('Halaman arsip sedang dalam pengembangan!')" class="text-blue-600 font-bold text-sm hover:underline">Lihat Semua →</button>
             </div>
-            <div id="news-container" class="grid grid-cols-1 lg:grid-cols-12 gap-8"></div>
+
+            <div id="news-container" class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                </div>
         </div>
     </section>
 
     <section id="soal" class="py-20 bg-white px-6">
-        <div class="max-w-6xl mx-auto text-center">
-            <h2 class="text-3xl font-bold mb-10">Bank Soal Terpilih</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-left" id="soal-container">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex justify-between items-center mb-10">
+                <h2 class="text-3xl font-bold text-slate-800">Arsip Soal & Materi</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="soal-list">
                 </div>
-            <button onclick="toggleSoal()" id="btn-soal" class="mt-10 border border-slate-300 px-8 py-3 rounded-xl font-bold hover:bg-slate-50">Tampilkan Lebih Banyak</button>
+
+            <div class="mt-12 text-center">
+                <button id="btn-toggle-soal" onclick="toggleSoal()" class="bg-white border border-slate-300 px-10 py-3 rounded-xl font-bold text-slate-600 hover:bg-slate-50 transition">
+                    Tampilkan Lebih Banyak
+                </button>
+            </div>
         </div>
     </section>
 
     <div id="login-modal" class="modal">
-        <div class="bg-white p-8 rounded-3xl w-full max-w-md mx-4 relative">
-            <button onclick="toggleModal('login-modal')" class="absolute top-4 right-4"><i class="fas fa-times"></i></button>
-            <h2 class="text-2xl font-bold mb-4">Profil Belajar</h2>
-            <input type="text" id="input-name" placeholder="Nama Lengkap" class="w-full p-4 bg-slate-50 rounded-2xl mb-4 outline-none">
-            <button onclick="handleLogin()" class="w-full bg-blue-600 text-white p-4 rounded-2xl font-bold">Simpan & Mulai</button>
+        <div class="bg-white p-8 rounded-3xl w-full max-w-md mx-4 relative shadow-2xl">
+            <button onclick="toggleModal('login-modal')" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600"><i class="fas fa-times"></i></button>
+            <div class="text-center">
+                <h2 class="text-2xl font-bold text-slate-800">Siapa Namamu?</h2>
+                <p class="text-slate-500 mt-2 mb-6">Namamu akan muncul di papan peringkat.</p>
+                <input type="text" id="input-name" placeholder="Ketik nama lengkap..." class="w-full p-4 bg-slate-50 rounded-2xl mb-4 border border-slate-200 outline-none focus:ring-4 focus:ring-blue-100 transition">
+                <button onclick="handleLogin()" class="w-full bg-blue-600 text-white p-4 rounded-2xl font-bold hover:bg-blue-700 shadow-lg transition">Mulai Sekarang</button>
+            </div>
         </div>
     </div>
 
     <script>
+        // --- DATA MASTER ---
         let userData = JSON.parse(localStorage.getItem('mathQuest_User')) || {
             name: "Siswa Tamu",
             points: 0,
+            badges: 0,
             lastQuizDate: "",
             isLoggedIn: false
         };
 
         const kuisBank = [
-            { q: "Jika 2<sup>x</sup> = 64, berapakah x?", a: [4, 5, 6, 7], c: 6 },
-            { q: "Sisa pembagian 2026 oleh 7 adalah...", a: [1, 2, 3, 4], c: 3 }
+            { q: "Berapa sisa pembagian 3<sup>2024</sup> oleh 10?", a: [1, 3, 9, 7], c: 1 },
+            { q: "Jika x + 2 = 5, maka x adalah...", a: [1, 2, 3, 4], c: 3 },
+            { q: "Jumlah sudut dalam segitiga adalah...", a: [90, 180, 270, 360], c: 180 }
         ];
 
-        // 1. LOGIKA KUIS (SEKALI SEHARI)
+        const dataSoal = [
+            { title: "PelatGratis_A1", tag: "OSN-K", url: "assets/pdf/PelatGratis_A1.pdf" },
+            { title: "IMO2024SL", tag: "IMO", url: "assets/pdf/IMO2024SL.pdf" },
+            { title: "Pertidaksamaan", tag: "OSN-P", url: "assets/pdf/Pertidaksamaan.pdf" },
+            { title: "Kombinatorika_Tambahan", tag: "OSN-K", url: "assets/pdf/Kombinatorika_Tambahan.pdf" }
+        ];
+
+        let isSoalExpanded = false;
+
+        // --- CORE FUNCTIONS ---
+        function save() {
+            localStorage.setItem('mathQuest_User', JSON.stringify(userData));
+            document.getElementById('display-name').innerText = userData.name;
+            document.getElementById('user-points').innerText = userData.points;
+            document.getElementById('user-badges').innerText = userData.badges;
+            
+            let level = "Novice";
+            if(userData.points >= 500) level = "Apprentice";
+            if(userData.points >= 1500) level = "Expert";
+            document.getElementById('user-level').innerText = "Rank: " + level;
+        }
+
+        // --- KUIS LOGIC (ANTI-REFRESH) ---
         function loadQuiz() {
             const container = document.getElementById('quiz-container');
             const today = new Date().toDateString();
 
             if (userData.lastQuizDate === today) {
                 container.innerHTML = `
-                    <div class="py-10">
-                        <i class="fas fa-lock text-4xl text-slate-300 mb-4"></i>
-                        <h3 class="text-xl font-bold">Tantangan Selesai!</h3>
-                        <p class="text-slate-500">Kamu sudah mengerjakan kuis hari ini. Kembali lagi besok ya!</p>
+                    <div class="text-center py-10">
+                        <div class="text-5xl mb-4 text-blue-500"><i class="fas fa-check-circle"></i></div>
+                        <h3 class="text-2xl font-bold text-slate-800">Tantangan Selesai!</h3>
+                        <p class="text-slate-500 mt-2">Kamu sudah mengambil tantangan hari ini. <br>Istirahatlah, kembali lagi besok!</p>
                     </div>
                 `;
                 return;
@@ -129,95 +183,120 @@
 
             const q = kuisBank[Math.floor(Math.random() * kuisBank.length)];
             container.innerHTML = `
-                <div class="bg-white p-6 rounded-2xl mb-6 shadow-sm"><p class="text-lg font-bold">${q.q}</p></div>
-                <div class="grid grid-cols-2 gap-4">
-                    ${q.a.map(opt => `<button onclick="checkAnswer(${opt},${q.c})" class="p-4 bg-white border border-slate-200 rounded-xl hover:bg-blue-50 font-bold">${opt}</button>`).join('')}
+                <div class="bg-white p-6 rounded-2xl border border-slate-100 mb-8 shadow-sm">
+                    <p class="text-xl font-semibold text-slate-800">${q.q}</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    ${q.a.map(opt => `<button onclick="checkAnswer(${opt}, ${q.c})" class="p-4 bg-white border border-slate-200 rounded-xl font-bold hover:border-blue-500 hover:bg-blue-50 transition">${opt}</button>`).join('')}
                 </div>
             `;
         }
 
-        function checkAnswer(p, c) {
+        function checkAnswer(userChoice, correctChoice) {
             if(!userData.isLoggedIn) { toggleModal('login-modal'); return; }
-            if (p === c) {
-                alert("BENAR! +100 Poin.");
+            
+            if(userChoice === correctChoice) {
+                alert("Luar biasa! Jawabanmu BENAR. +100 Poin.");
                 userData.points += 100;
+                if(userData.points >= 500 && userData.badges < 1) userData.badges = 1;
             } else {
-                alert("SALAH! Tetap semangat, coba lagi besok.");
+                alert("Yah, jawabanmu kurang tepat. Coba lagi besok ya!");
             }
+
             userData.lastQuizDate = new Date().toDateString();
-            saveData();
+            save();
             loadQuiz();
         }
 
-        // 2. LOAD NEWS (LIMIT 4)
+        // --- MAGAZINE LOGIC (Limit 4) ---
         async function loadNews() {
             try {
                 const res = await fetch('news.json');
-                const data = await res.json();
+                const allNews = await res.json();
                 const container = document.getElementById('news-container');
-                
-                // Ambil 4 teratas saja
-                const display = data.slice(0, 4);
-                const main = display[0];
-                const sides = display.slice(1);
 
-                let html = `<div onclick="window.location.href='baca.html?id=${main.id}'" class="lg:col-span-7 cursor-pointer group">
-                    <img src="${main.img}" class="w-full h-80 object-cover rounded-[2rem] mb-6 transition group-hover:scale-[1.02]">
-                    <h3 class="text-2xl font-bold group-hover:text-blue-600">${main.title}</h3>
-                </div>`;
+                // Hanya ambil 4 berita terbaru
+                const news = allNews.slice(0, 4);
+                if(news.length === 0) return;
 
-                html += `<div class="lg:col-span-5 flex flex-col gap-6">`;
-                sides.forEach(s => {
-                    html += `<div onclick="window.location.href='baca.html?id=${s.id}'" class="flex gap-4 cursor-pointer group border-b pb-4">
-                        <img src="${s.img}" class="w-20 h-20 object-cover rounded-xl">
-                        <h4 class="font-bold group-hover:text-blue-600 text-sm">${s.title}</h4>
-                    </div>`;
+                // Berita Besar
+                const main = news[0];
+                let html = `
+                    <div onclick="window.location.href='baca.html?id=${main.id}'" class="lg:col-span-7 cursor-pointer group">
+                        <div class="relative overflow-hidden rounded-[2.5rem] shadow-lg mb-6">
+                            <img src="${main.img}" class="w-full h-80 md:h-[450px] object-cover transition duration-500 group-hover:scale-105">
+                            <div class="absolute top-6 left-6 bg-blue-600 text-white text-[10px] font-bold px-4 py-2 rounded-full uppercase tracking-widest">Headline</div>
+                        </div>
+                        <h3 class="text-3xl font-bold text-slate-800 group-hover:text-blue-600 transition">${main.title}</h3>
+                        <p class="text-slate-500 mt-4 leading-relaxed">${main.desc}</p>
+                    </div>
+                `;
+
+                // Berita Sampingan
+                html += `<div class="lg:col-span-5 flex flex-col gap-8">`;
+                news.slice(1).forEach(item => {
+                    html += `
+                        <div onclick="window.location.href='baca.html?id=${item.id}'" class="flex gap-5 cursor-pointer group border-b border-slate-100 pb-6 last:border-0">
+                            <img src="${item.img}" class="w-24 h-24 object-cover rounded-2xl flex-shrink-0">
+                            <div>
+                                <span class="text-[10px] font-bold text-blue-500 uppercase tracking-widest">${item.category}</span>
+                                <h4 class="font-bold text-slate-800 group-hover:text-blue-600 transition leading-snug mt-1">${item.title}</h4>
+                            </div>
+                        </div>
+                    `;
                 });
                 html += `</div>`;
+                
                 container.innerHTML = html;
-            } catch (e) { console.log(e) }
+            } catch (e) { console.error("Gagal muat berita"); }
         }
 
-        // 3. LIMIT SOAL
-        const allSoal = [
-            { n: "PelatGratis_A1", c: "OSN-K", l: "assets/pdf/PelatGratis_A1.pdf" },
-            { n: "IMO2024SL", c: "IMO", l: "assets/pdf/IMO2024SL.pdf" },
-            { n: "Pertidaksamaan", c: "OSN-P", l: "assets/pdf/Pertidaksamaan.pdf" },
-            { n: "Kombinatorika", c: "OSN-K", l: "assets/pdf/Kombinatorika_Tambahan.pdf" }
-        ];
-        let soalExpanded = false;
-
-        function displaySoal() {
-            const container = document.getElementById('soal-container');
-            const limit = soalExpanded ? allSoal.length : 2;
-            container.innerHTML = allSoal.slice(0, limit).map(s => `
-                <div class="flex items-center justify-between p-5 bg-white border border-slate-200 rounded-2xl border-l-4 border-l-blue-600">
-                    <div><p class="font-bold">${s.n}</p><p class="text-xs text-slate-400 font-bold">${s.c}</p></div>
-                    <a href="${s.l}" class="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-bold">Buka</a>
+        // --- BANK SOAL LOGIC (Limit Tampilan) ---
+        function renderSoal() {
+            const container = document.getElementById('soal-list');
+            const limit = isSoalExpanded ? dataSoal.length : 2;
+            
+            container.innerHTML = dataSoal.slice(0, limit).map(s => `
+                <div class="flex items-center justify-between p-6 bg-white border border-slate-200 rounded-3xl card-hover border-l-8 border-l-blue-600">
+                    <div class="flex items-center gap-4">
+                        <div class="bg-blue-50 p-4 rounded-2xl text-blue-600 text-xl"><i class="fas fa-file-pdf"></i></div>
+                        <div>
+                            <p class="font-bold text-slate-800">${s.title}</p>
+                            <p class="text-xs text-slate-400 font-bold uppercase tracking-widest">${s.tag}</p>
+                        </div>
+                    </div>
+                    <a href="${s.url}" target="_blank" class="bg-slate-100 text-slate-600 px-6 py-2 rounded-xl text-sm font-bold hover:bg-blue-600 hover:text-white transition">Buka</a>
                 </div>
             `).join('');
-            document.getElementById('btn-soal').innerText = soalExpanded ? "Sembunyikan" : "Tampilkan Lebih Banyak";
+
+            document.getElementById('btn-toggle-soal').innerText = isSoalExpanded ? "Sembunyikan Sebagian" : "Tampilkan Semua Soal";
         }
 
-        function toggleSoal() { soalExpanded = !soalExpanded; displaySoal(); }
-
-        // UTILS
-        function saveData() {
-            localStorage.setItem('mathQuest_User', JSON.stringify(userData));
-            document.getElementById('display-name').innerText = userData.name;
-            document.getElementById('user-points').innerText = userData.points;
-            let lvl = "Novice";
-            if(userData.points >= 500) lvl = "Expert";
-            document.getElementById('user-level').innerText = lvl;
+        function toggleSoal() {
+            isSoalExpanded = !isSoalExpanded;
+            renderSoal();
         }
 
+        // --- AUTH & MODAL ---
         function toggleModal(id) { document.getElementById(id).classList.toggle('active'); }
         function handleLogin() {
-            const n = document.getElementById('input-name').value;
-            if(n) { userData.name = n; userData.isLoggedIn = true; saveData(); toggleModal('login-modal'); }
+            const name = document.getElementById('input-name').value;
+            if(name.trim()) {
+                userData.name = name;
+                userData.isLoggedIn = true;
+                save();
+                toggleModal('login-modal');
+            }
         }
 
-        window.onload = () => { saveData(); loadQuiz(); loadNews(); displaySoal(); };
+        // --- STARTUP ---
+        window.onload = () => {
+            save();
+            loadQuiz();
+            loadNews();
+            renderSoal();
+        };
     </script>
 </body>
 </html>
+
