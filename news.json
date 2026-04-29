@@ -1,6 +1,6 @@
 [
   {
-    "id": 3,
+    "id": 1,
     "category": "Materi",
     "title": "Stars and Bars apatuh?",
     "desc": "materi yang nggak diajarin disekolah tapi sering keluar di osn-k",
@@ -8,7 +8,7 @@
     "img": "assets/pdf/starsandbar.jpg"
   },
   {
-    "id": 1,
+    "id": 2,
     "category": "Berita",
     "title": "Persiapan OSN 2026",
     "desc": "Rutinitas Dokmat dalam mempersiapkan OSN",
@@ -16,7 +16,7 @@
     "img": "assets/pdf/dokmat.jpg"
   },
   {
-    "id": 2,
+    "id": 3,
     "category": "Materi",
     "title": "Mengenal Teorema Ptolemy",
     "desc": "Cara cepat mengerjakan soal geometri pada segi empat tali busur.",
