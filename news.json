@@ -5,7 +5,7 @@
     "title": "Stars and Bars apatuh?",
     "desc": "materi yang nggak diajarin disekolah tapi sering keluar di osn-k",
     "content": "Stars and bars adalah teknik dalam kombinatorika untuk menghitung banyaknya solusi bilangan bulat dari suatu persamaan, atau setara dengan itu, banyaknya cara mendistribusikan objek yang identik ke dalam wadah yang berbeda. Konsep kerjanya seperti ini: misalkan Anda punya n bintang (⭐) yang melambangkan objek identik, dan Anda ingin membaginya ke dalam k kotak yang berbeda. Anda bisa memisahkan kotak-kotak tersebut menggunakan k-1 batang (|). Setiap susunan unik dari bintang dan batang mewakili satu cara distribusi. Contohnya, untuk n=5 dan k=3, susunan ⭐⭐|⭐⭐|⭐ berarti kotak 1 dapat 2, kotak 2 dapat 2, kotak 3 dapat 1. Jumlah total susunan (urutan bintang dan batang) adalah memilih posisi untuk batang dari total n+k-1 posisi, yaitu C(n+k-1, k-1). Teknik ini menyelesaikan masalah seperti "berapa banyak solusi bilangan cacah dari x₁ + x₂ + ... + xₖ = n" dengan rumus yang sama, karena setiap solusi berkorespondensi langsung dengan satu konfigurasi bintang dan batang.",
-    "img": "assets/img/starandbar.jpg"
+    "img": "assets/pdf/starsandbar.jpg"
   },
   {
     "id": 1,
@@ -13,7 +13,7 @@
     "title": "Persiapan OSN 2026",
     "desc": "Rutinitas Dokmat dalam mempersiapkan OSN",
     "content": "Ko jef itu kalo pulang sekolah langsung les bisa 2 sampe 4 jam dan masih belajar dirumah sehingga belajar mandiri dan pembinaan atau les itu harus seimbang bahkan Ko jef bisa belajar mandiri sampe jam 11 malam sehingga disekolah Ko jef memanfaatkan jam istirahat untuk tidur dari pada belajar lagi karena mungkin kualitas belajar lebih baik dari pada kuantitas.",
-    "img": "assets/img/dokmat.jpg"
+    "img": "assets/pdf/dokmat.jpg"
   },
   {
     "id": 2,
